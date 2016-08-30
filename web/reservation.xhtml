@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="_TEMPLATE2.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="titre">
+        Veuillez vous identifier
+    </ui:define>
+    <ui:define name="contenu">
+        <div align="center">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Pays départ" />
+                    <h:selectOneMenu value="#{reservationManagerBean.paysDepart}">
+                        <f:selectItems value="#{reservationManagerBean.tabPays}" />
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="Pays départ" />
+                    <h:selectOneRadio value="#{reservationManagerBean.paysArrivee}">
+                        <f:selectItems value="#{reservationManagerBean.tabPays}" />
+                    </h:selectOneRadio>
+                    
+                    <h:outputLabel value="Première classe" />
+                    <h:selectOneRadio value="#{reservationManagerBean.premiereClasse}">
+                        <f:selectItem itemLabel="1 ère" itemValue="true" />
+                        <f:selectItem itemLabel="2 nd" itemValue="false" />
+                    </h:selectOneRadio>
+                    
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
